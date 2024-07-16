@@ -1,0 +1,159 @@
+.main {
+  background-color: #C5ADC5;
+}
+
+.news-header {
+  background-color: #C5ADC5;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.news-header h1 {
+  margin: 0;
+  font-size: 60px;
+  font-weight: bold;
+  color: #ff4500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ff4500;
+  border-radius: 25px 0 0 25px;
+  outline: none;
+  flex: 1;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ff4500;
+  background-color: #ff4500;
+  color: white;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-left: none; /* Remove the left border */
+}
+
+.search-button:hover {
+  background-color: #e14000;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+.news-header nav {
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.news-header nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+
+.news-header nav a:hover,
+.news-header nav a:focus {
+  background-color: white;
+  color: red;
+  border-radius: 3px;
+}
+
+.news-header nav a.active {
+  background-color: white;
+  color: red;
+  border-radius: 3px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.newselement {
+  border: 1px solid #dee2e6;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: transform 0.3s;
+}
+
+.newselement:hover {
+  transform: scale(1.02);
+}
+
+.newsimage {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 15px;
+}
+
+.newselement h2 {
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.newselement p {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px 0 20px 0;
+  margin: 0 10px 10px 10px;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo img {
+  height: 50px;
+}
+
+.footer-text {
+  font-size: 14px;
+}
+
+.footer-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.footer-link a:hover {
+  text-decoration: underline;
+}
