@@ -9,6 +9,7 @@ const NewsCatalogue = () => {
     const [articles, setArticles] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     useEffect(() => {
         const getArticles = async () => {
@@ -41,6 +42,11 @@ const NewsCatalogue = () => {
 
     const handleNavClick = (newTopic) => {
         setTopic(newTopic);
+        setIsDropdownOpen(false);
+    };
+
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
     };
 
     return (
@@ -67,8 +73,18 @@ const NewsCatalogue = () => {
                     <a href="#" onClick={() => handleNavClick('politics')}>Politics</a>
                     <a href="#" onClick={() => handleNavClick('indigenous')}>Indigenous</a>
                     <a href="#" onClick={() => handleNavClick('business')}>Business</a>
-                    <a href="#" onClick={() => handleNavClick('the national')}>The National</a>
-                    <a href="#" onClick={() => handleNavClick('more')}>More</a>
+                    <a href="#" onClick={toggleDropdown} className="dropdown-toggle">More</a>
+                    {isDropdownOpen && (
+                        <div className="dropdown-menu">
+                            <a href="#" onClick={() => handleNavClick('health')}>Health</a>
+                            <a href="#" onClick={() => handleNavClick('entertainment')}>Entertainment</a>
+                            <a href="#" onClick={() => handleNavClick('science')}>Science</a>
+                            <a href="#" onClick={() => handleNavClick('cbc news investigates')}>CBC News Investigates</a>
+                            <a href="#" onClick={() => handleNavClick('go public')}>Go Public</a>
+                            <a href="#" onClick={() => handleNavClick('about cbc news')}>About CBC News</a>
+                            <a href="#" onClick={() => handleNavClick('being black in canada')}>Being Black in Canada</a>
+                        </div>
+                    )}
                 </nav>
             </header>
             <div className="news-grid">
