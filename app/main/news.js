@@ -12,22 +12,26 @@ const NewsCatalogue = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     useEffect(() => {
+        console.log("API Key:", process.env.NEXT_PUBLIC_NEWS_API_KEY);
+
         const getArticles = async () => {
             try {
                 const response = await axios.get(
-                    `https://newsapi.org/v2/everything?q=${topic}&apiKey=322f3e7c5d3c4f13b93adf10d05b61df`
+                    `https://newsapi.org/v2/everything?q=${topic}&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
                 );
+                console.log("API Response:", response.data);
                 if (response.data.articles.length === 0) {
                     setErrorMessage("No articles found. Try another search term.");
                 } else {
                     setArticles(response.data.articles);
-                    setErrorMessage(""); // Clear any previous error message
+                    setErrorMessage("");
                 }
             } catch (error) {
                 console.error("Error fetching articles:", error);
                 setErrorMessage("Failed to fetch articles. Please try again.");
             }
         };
+
         getArticles();
     }, [topic]);
 
