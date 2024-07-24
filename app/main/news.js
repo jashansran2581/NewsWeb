@@ -12,14 +12,12 @@ const NewsCatalogue = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     useEffect(() => {
-        console.log("API Key:", process.env.NEXT_PUBLIC_NEWS_API_KEY);
-
         const getArticles = async () => {
             try {
                 const response = await axios.get(
-                    `https://newsapi.org/v2/everything?q=${topic}&apiKey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
+                    `https://gnews.io/api/v4/search?q=${topic}&apikey=${process.env.NEXT_PUBLIC_NEWS_API_KEY}`
                 );
-                console.log("API Response:", response.data);
+                console.log(response.data);  // Log the API response
                 if (response.data.articles.length === 0) {
                     setErrorMessage("No articles found. Try another search term.");
                 } else {
@@ -31,9 +29,10 @@ const NewsCatalogue = () => {
                 setErrorMessage("Failed to fetch articles. Please try again.");
             }
         };
-
+    
         getArticles();
     }, [topic]);
+    
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -111,7 +110,7 @@ const NewsCatalogue = () => {
                         ©2024 NewsWeb. All rights reserved.
                     </div>
                     <div className="footer-link">
-                        <a href="www.google.com">Visitez google</a>
+                        <a href="google.com">Visitez google</a>
                     </div>
                 </div>
             </footer>
