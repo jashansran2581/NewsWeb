@@ -97,7 +97,7 @@ const NewsCatalogue = () => {
                         title={article.title}
                         description={article.description}
                         url={article.url}
-                        image={article.urlToImage}
+                        image={article.image}
                     />
                 ))}
             </div>
